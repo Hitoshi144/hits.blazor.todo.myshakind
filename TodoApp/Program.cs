@@ -4,6 +4,8 @@ using Microsoft.EntityFrameworkCore;
 using TodoApp.Components;
 using TodoApp.Components.Account;
 using TodoApp.Data;
+using TodoApp.Data.Interfaces;
+using TodoApp.Data.Services;
 
 namespace TodoApp
 {
@@ -40,6 +42,7 @@ namespace TodoApp
                 .AddDefaultTokenProviders();
 
             builder.Services.AddSingleton<IEmailSender<ApplicationUser>, IdentityNoOpEmailSender>();
+            builder.Services.AddScoped<IDataService, MemoryDataService>();
 
             var app = builder.Build();
 

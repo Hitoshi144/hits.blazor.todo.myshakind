@@ -26,9 +26,25 @@ namespace TodoApp.Data.Services {
             CreateDate = DateTime.Now,
         },
 	};
-public async Task<IEnumerable<TaskItem>> GetTaskItemsAsync()
+
+        public Task DeleteAsync(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<TaskItem> GetTaskAsync(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public async Task<IEnumerable<TaskItem>> GetAllAsync()
         {
 			return await Task.FromResult(tasks);
+        }
+
+        public Task SaveAsync(TaskItem item)
+        {
+            throw new NotImplementedException();
         }
     }
 }
